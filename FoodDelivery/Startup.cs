@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Infrastructure.Data;
 using ApplicationCore.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
 namespace FoodDelivery
 {
@@ -31,6 +32,11 @@ namespace FoodDelivery
             services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ApplicationDbContext"),
                     sqlServerOptions => sqlServerOptions.MigrationsAssembly("Infrastructure")));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddDefaultTokenProviders()
+            .AddEntityFrameworkStores<ApplicationDbContext>();
+
 
             services.AddScoped<IUnitofWork, UnitofWork>();
 
