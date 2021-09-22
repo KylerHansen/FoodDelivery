@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 </head>
+
 <body class="search-background">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary text-white border-bottom box-shadow mb-3">
@@ -20,7 +21,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                   <partial name="_LoginPartial" />
+                    <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropDown" data-toggle="dropdown">
@@ -30,15 +31,13 @@
                                 <a class="dropdown-item text-black" asp-page="/Admin/Categories/Index">Category</a>
                                 <a class="dropdown-item text-black" asp-page="/Admin/FoodTypes/Index">Food Type</a>
                                 <a class="dropdown-item text-black" asp-page="/Admin/MenuItems/Index">Menu Item</a>
-                                <a class="dropdown-item text-black" asp-page="/Admin/Roles/Roles">Roles</a>
-                                <a class="dropdown-item text-black" asp-page="/Admin/User/Index">User</a>
+                                <a class="dropdown-item text-black" asp-page="/Admin/Users/Index">Users</a>
+                                <a class="dropdown-item text-black" asp-page="/Admin/Roles/Index">Roles</a>
                             </div>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-page="/Admin/Order/ManageOrder">Manage Orders</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-page="/Admin/Order/OrderList">Order Deliveries</a>
                         </li>
@@ -46,17 +45,19 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-page="/Admin/Order/OrderList">Order History</a>
                         </li>
-
                         <li>
                             <a class="nav-link text-white" asp-page="/Customer/Cart/Index">
                                 <i class="fas fa-shopping-cart"></i> (0)
                             </a>
+
                         </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -65,7 +66,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-           &copy; 2021 - Food Delivery 
+            &copy; 2021 - Food Delivery (A CS 4790 Tutorial)
         </div>
     </footer>
 
@@ -77,5 +78,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     @RenderSection("Scripts", required: false)
+
 </body>
+
 </html>
