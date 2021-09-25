@@ -22,14 +22,14 @@ namespace ApplicationCore.Models
 
         public string Image { get; set; }
 
-        public int CategoryId { get; set; }
+        public int CategoryId { get; set; } //Also need to add it here. 
 
         public int FoodTypeId { get; set; }
 
 
 
         //To Connect Objects or Tables
-        [ForeignKey("CategoryId")]  //this makes CategoryId a foregin key to the actually primary key in Category Model
+        [ForeignKey("CategoryId")]  //this makes CategoryId a foreign key to the actually primary key in Category Model
         public virtual Category Category { get; set; }
         [ForeignKey("FoodTypeId")]
         public virtual FoodType FoodType { get; set; }
