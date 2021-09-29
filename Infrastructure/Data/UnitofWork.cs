@@ -19,7 +19,17 @@ namespace Infrastructure.Data
         private IGenericRepository<FoodType> _FoodType;
         private IGenericRepository<MenuItem> _MenuItem;
         private IGenericRepository<ApplicationUser> _ApplicationUser;
+        private IGenericRepository<ShoppingCart> _ShoppingCart;
 
+
+        public IGenericRepository<ShoppingCart> ShoppingCart
+        {
+            get
+            {
+                if (_ShoppingCart == null) _ShoppingCart = new GenericRepository<ShoppingCart>(_dbContext);
+                return _ShoppingCart;
+            }
+        }
         public IGenericRepository<ApplicationUser> ApplicationUser
         {
             get

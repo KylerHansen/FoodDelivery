@@ -64,14 +64,14 @@ namespace Infrastructure.Data
 
                 if (asNoTracking)
                 {
-                    return _dbContext.Set<T>()
+                    return queryable
                         .AsNoTracking()
                         .Where(predicate)
                         .FirstOrDefault();
                 }
                 else
                 {
-                    return _dbContext.Set<T>()
+                    return queryable
                         .Where(predicate)
                         .FirstOrDefault();
                 }
@@ -106,14 +106,14 @@ namespace Infrastructure.Data
 
                 if (asNoTracking)
                 {
-                    return await _dbContext.Set<T>()
+                    return await queryable
                         .AsNoTracking()
                         .Where(predicate)
                         .FirstOrDefaultAsync();
                 }
                 else
                 {
-                    return await _dbContext.Set<T>()
+                    return await queryable
                         .Where(predicate)
                         .FirstOrDefaultAsync();
                 }
