@@ -20,7 +20,26 @@ namespace Infrastructure.Data
         private IGenericRepository<MenuItem> _MenuItem;
         private IGenericRepository<ApplicationUser> _ApplicationUser;
         private IGenericRepository<ShoppingCart> _ShoppingCart;
+        private IGenericRepository<OrderHeader> _OrderHeader; 
+        private IGenericRepository<OrderDetails> _OrderDetails;
 
+
+        public IGenericRepository<OrderHeader> OrderHeader
+        {
+            get
+            {
+                if (_OrderHeader == null) _OrderHeader = new GenericRepository<OrderHeader>(_dbContext);
+                return _OrderHeader;
+            }
+        }
+        public IGenericRepository<OrderDetails> OrderDetails
+        {
+            get
+            {
+                if (_OrderDetails == null) _OrderDetails = new GenericRepository<OrderDetails>(_dbContext);
+                return _OrderDetails;
+            }
+        }
 
         public IGenericRepository<ShoppingCart> ShoppingCart
         {
