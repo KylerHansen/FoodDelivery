@@ -35,8 +35,12 @@ namespace ApplicationCore.Models
 
         public string Status { get; set; }
 
+        public string PaymentStatus { get; set; }
+
         [Display(Name = "Delivery Name")]
         public string DeliveryName { get; set; }
+
+        public string Comments { get; set; }
 
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
